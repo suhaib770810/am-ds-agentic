@@ -1,0 +1,15 @@
+node_modules/
+.vscode/
+
+# Local environment variables
+.env
+.dotenv/
+
+# Large external modules
+modules/clientportal.gw/
+modules_dev/clientportal.gw/
+
+# Apple macOS system files
+.DS_Store
+*.DS_Store
+modules/.DS_Store

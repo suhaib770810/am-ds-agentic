@@ -1,0 +1,19 @@
+
+#dockerignore
+.dockerignore
+
+#git files
+.git
+.gitignore
+
+#dependencies
+node_modules/
+.vscode/
+
+#env files
+.env
+.dotenv/
+
+#dev modules
+sandbox.js
+modules_dev/

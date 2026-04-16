@@ -1,0 +1,157 @@
+const schemaObjects = {
+    tradesFQMockObject: {
+        "underlyingSymbol": "GOOG",
+        "strike": "200",
+        "expiry": "20261218",
+        "dateTime": "20240718;120801",
+        "putCall": "C",
+        "tradeDate": "20240718",
+        "transactionType": "ExchTrade",
+        "quantity": "1",
+        "tradePrice": "31.12",
+        "tradeMoney": "3112",
+        "proceeds": "-3112",
+        "ibCommission": "-1.04935",
+        "netCash": "-3113.04935",
+        "cost": "3113.04935",
+        "fifoPnlRealized": "0",
+        "buySell": "BUY",
+        "holdingPeriodDateTime": "",
+        "whenRealized": "",
+        "whenReopened": ""
+    },
+
+    tradeObjectWithFields:{
+        "underlyingSymbol": "TEXT",
+        "strike": "NUMERIC",
+        "expiry": "INTEGER",
+        "dateTime": "INTEGER",
+        "putCall": "TEXT",
+        "tradeDate": "INTEGER",
+        "transactionType": "TEXT",
+        "quantity": "NUMERIC",
+        "tradePrice": "NUMERIC",
+        "tradeMoney": "NUMERIC",
+        "proceeds": "NUMERIC",
+        "ibCommission": "NUMERIC",
+        "netCash": "NUMERIC",
+        "cost": "NUMERIC",
+        "fifoPnlRealized": "NUMERIC",
+        "buySell": "TEXT",
+        "holdingPeriodDateTime": "INTEGER",
+        "whenRealized": "INTEGER",
+        "whenReopened": "INTEGER"
+    },
+
+    tradeTableFields:{
+        "ID": "INTEGER PRIMARY KEY AUTOINCREMENT",
+        "underlyingSymbol": "TEXT",
+        "strike": "NUMERIC",
+        "expiry": "INTEGER",
+        "dateTime": "INTEGER",
+        "putCall": "TEXT",
+        "tradeDate": "INTEGER",
+        "transactionType": "TEXT",
+        "quantity": "NUMERIC",
+        "tradePrice": "NUMERIC",
+        "tradeMoney": "NUMERIC",
+        "proceeds": "NUMERIC",
+        "ibCommission": "NUMERIC",
+        "netCash": "NUMERIC",
+        "cost": "NUMERIC",
+        "fifoPnlRealized": "NUMERIC",
+        "buySell": "TEXT",
+        "holdingPeriodDateTime": "INTEGER",
+        "whenRealized": "INTEGER",
+        "whenReopened": "INTEGER"
+    },
+
+
+    // deprecated
+    tradeObjectWithFields_postProcessing:{
+        "underlyingSymbol": "TEXT",
+        "strike": "NUMERIC",
+        "expiry": "INTEGER",
+        "dateTime": "INTEGER",
+        "putCall": "TEXT",
+        "tradeDate": "INTEGER",
+        "transactionType": "TEXT",
+        "quantity": "NUMERIC",
+        "tradePrice": "NUMERIC",
+        "tradeMoney": "NUMERIC",
+        "proceeds": "NUMERIC",
+        "ibCommission": "NUMERIC",
+        "netCash": "NUMERIC",
+        "cost": "NUMERIC",
+        "fifoPnlRealized": "NUMERIC",
+        "buySell": "TEXT",
+        "holdingPeriodDateTime": "INTEGER",
+        "whenRealized": "INTEGER",
+        "whenReopened": "INTEGER",
+        "contractDescCustom": "TEXT"
+    },
+
+    uniqueFieldsTrades: [
+        'underlyingSymbol', 
+        'expiry', 
+        'strike', 
+        'tradeDate', 
+        'tradePrice',
+        'dateTime'
+    ],
+
+    positionsFQObjectWithFields: {
+        "accountId": "TEXT",
+        "acctAlias": "TEXT",
+        "symbol": "TEXT",
+        "description": "TEXT",
+        "underlyingSymbol": "TEXT",
+        "strike": "NUMERIC",
+        "expiry": "INTEGER",
+        "putCall": "TEXT",
+        "position": "NUMERIC",
+        "positionValue": "NUMERIC",
+        "costBasisPrice": "NUMERIC",
+        "costBasisMoney": "NUMERIC",
+        "percentOfNAV": "NUMERIC",
+        "fifoPnlUnrealized": "NUMERIC"
+    },
+
+    // deprecated
+    positionsFQObjectWithFields_postProcessing: {
+        "accountId": "TEXT",
+        "acctAlias": "TEXT",
+        "symbol": "TEXT",
+        "description": "TEXT",
+        "underlyingSymbol": "TEXT",
+        "strike": "NUMERIC",
+        "expiry": "INTEGER",
+        "putCall": "TEXT",
+        "position": "NUMERIC",
+        "positionValue": "NUMERIC",
+        "costBasisPrice": "NUMERIC",
+        "costBasisMoney": "NUMERIC",
+        "percentOfNAV": "NUMERIC",
+        "fifoPnlUnrealized": "NUMERIC",
+        "contractDescCustom": "TEXT"
+    },
+
+    positionsFQMockObject: {
+        "accountId": "U14673520",
+        "acctAlias": "MQ - Options",
+        "symbol": "AAPL  261218C00250000",
+        "description": "AAPL 18DEC26 250 C",
+        "underlyingSymbol": "AAPL",
+        "strike": "250",
+        "expiry": "20261218",
+        "putCall": "C",
+        "position": "1",
+        "positionValue": "1897.5",
+        "costBasisPrice": "23.94088174",
+        "costBasisMoney": "2394.088174",
+        "percentOfNAV": "2.87",
+        "fifoPnlUnrealized": "-496.588174"
+    },
+}
+
+export default schemaObjects
