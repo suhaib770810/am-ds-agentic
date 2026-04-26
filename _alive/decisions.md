@@ -56,6 +56,22 @@ The system is a functional Node.js (ESM) data service that aggregates financial 
 
 ---
 
+## Pending Design Decisions
+
+Items that are open and need a design resolution before building. Updated as discussions evolve.
+
+| # | Item | Repo(s) | Priority | Status |
+|---|------|---------|----------|--------|
+| 1 | **SQL Injection** — Replace template-literal SQL in `dataAggDbQueries.js` with parameterized queries | both | Critical | Pending |
+| 2 | **Unit Tests** — No automated test coverage for data parsers, type handlers, or API responses | both | High | Pending |
+| 3 | **Environment Variable Validation** — Missing `.env` keys cause cryptic runtime errors. Need startup validation (e.g. `zod`) that fails fast with clear messages | ds | High | Pending |
+| 4 | **Zombie Modules** — `fmp/` and `trendAnalyzer/` are skeletons that add noise. Decision needed: integrate, move to `experimental/`, or delete | ds | Low | Pending |
+| 5 | **Options Chain Data Provider** — Need a dedicated market data API for live option prices and chains. Candidates: Polygon.io (~$29/mo), Tradier (free tier). Decision: which provider, what data to pull, how it integrates into the data layer schema | ds | High | Pending |
+| 6 | **IBKR TWS Market Data Integration** — TWS exposes live market data (quotes, option chains) via its API. Need to design how this plugs into the data layer alongside Flex Queries | ds | Medium | Pending |
+| 7 | **Data Source Connector Interface** — All data source connectors (IBKR Flex, IBKR TWS, Polygon, Tradier, etc.) should implement a shared interface (e.g. `connect()`, `fetchTrades(since)`, `fetchPositions()`, `getOptionChain(symbol, expiry)`). Connectors are objects (they hold auth state, sessions, rate limits). The data layer calls the interface — it doesn't care which connector is behind it. Design the interface contract before building new connectors. | ds | High | Pending |
+
+---
+
 ## Proposed Technical Improvements
 
 ### 1. Reliability & Quality
